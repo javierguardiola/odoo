@@ -62,6 +62,7 @@
         <form string="Profesores">
             <group>
                 <field name="nombre"/>
+                <field name="asignatura_id"/>
             </group>
         </form>
     </field>
@@ -76,7 +77,7 @@
             <group>
                 <field name="nombre"/>
                 <field name="profesor_id"/>
-                <field name="alumnos_id"/>
+                <field name="alumno_id" widget="many2many_tags"/>
             </group>
         </form>
     </field>
@@ -102,6 +103,7 @@
     <field name="arch" type="xml">
         <tree string="Profesores">
             <field name="nombre"/>
+            <field name="asignatura_id"/>
         </tree>
     </field>
 </record>
@@ -114,7 +116,7 @@
         <tree string="Asignaturas">
             <field name="nombre"/>
             <field name="profesor_id"/>
-            <field name="alumnos_id"/>
+            <field name="alumno_id" widget="many2many_tags"/>
         </tree>
     </field>
 </record>

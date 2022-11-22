@@ -23,7 +23,6 @@ class Alumno(models.Model):
 
     nombre = fields.Char(string='Nombre', required=True)
     edad = fields.Integer(string='Edad')
-    curso_id = fields.Many2one('rubrica.curso', string='Curso')
 
 # add a profesores models
 class Profesor(models.Model):

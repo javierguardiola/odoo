@@ -1,0 +1,135 @@
+<odoo>
+
+<!-- add parent base prueba -->
+<record id="view_rubrica_base_form" model="ir.ui.view">
+    <field name="name">rubrica.base.form</field>
+    <field name="model">rubrica.base</field>
+    <field name="arch" type="xml">
+        <form string="Rubrica Base">
+            <sheet>
+                <group>
+                    <field name="name"/>
+                    <field name="description"/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+
+<!-- add alumnos action -->
+<record id="alumnos_action" model="ir.actions.act_window">
+    <field name="name">Alumnos</field>
+    <field name="res_model">rubrica.alumno</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+
+<!-- add profesor action -->
+<record id="profesores_action" model="ir.actions.act_window">
+    <field name="name">Profesores</field>
+    <field name="res_model">rubrica.profesor</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<!-- add asignaturas action -->
+<record id="asignaturas_action" model="ir.actions.act_window">
+    <field name="name">Asignaturas</field>
+    <field name="res_model">rubrica.asignatura</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+
+<!-- add alumnos form view -->
+<record id="alumnos_form" model="ir.ui.view">
+    <field name="name">Alumnos.form</field>
+    <field name="model">rubrica.alumno</field>
+    <field name="arch" type="xml">
+        <form string="Alumnos">
+            <group>
+                <field name="nombre"/>
+                <field name="edad"/>
+            </group>
+        </form>
+    </field>
+</record>
+
+<!-- add profesor form view -->
+<record id="profesores_form" model="ir.ui.view">
+    <field name="name">Profesores.form</field>
+    <field name="model">rubrica.profesor</field>
+    <field name="arch" type="xml">
+        <form string="Profesores">
+            <group>
+                <field name="nombre"/>
+            </group>
+        </form>
+    </field>
+</record>
+
+<!-- add asignatura form view -->
+<record id="asignaturas_form" model="ir.ui.view">
+    <field name="name">Asignaturas.form</field>
+    <field name="model">rubrica.asignatura</field>
+    <field name="arch" type="xml">
+        <form string="Asignaturas">
+            <group>
+                <field name="nombre"/>
+                <field name="profesor_id"/>
+                <field name="alumnos_id"/>
+            </group>
+        </form>
+    </field>
+</record>
+
+
+<!-- add alumno tree view -->
+<record id="alumnos_tree" model="ir.ui.view">
+    <field name="name">Alumnos.tree</field>
+    <field name="model">rubrica.alumno</field>
+    <field name="arch" type="xml">
+        <tree string="Alumnos">
+            <field name="nombre"/>
+            <field name="edad"/>
+        </tree>
+    </field>
+</record>
+
+<!-- add profesor tree view -->
+<record id="profesores_tree" model="ir.ui.view">
+    <field name="name">Profesores.tree</field>
+    <field name="model">rubrica.profesor</field>
+    <field name="arch" type="xml">
+        <tree string="Profesores">
+            <field name="nombre"/>
+        </tree>
+    </field>
+</record>
+
+<!-- add asignatura tree view -->
+<record id="asignaturas_tree" model="ir.ui.view">
+    <field name="name">Asignaturas.tree</field>
+    <field name="model">rubrica.asignatura</field>
+    <field name="arch" type="xml">
+        <tree string="Asignaturas">
+            <field name="nombre"/>
+            <field name="profesor_id"/>
+            <field name="alumnos_id"/>
+        </tree>
+    </field>
+</record>
+
+
+
+
+<!-- add rubrica root menu menuitem-->
+<menuitem id="rubrica_menu" name="Rubrica" sequence="10"/>
+<!-- add alumno menu -->  
+<menuitem id="alumnos_menu" name="Alumnos" parent="rubrica_menu" action="alumnos_action"/>
+    
+<!-- add profesor menu -->
+<menuitem id="profesores_menu" name="Profesores" parent="rubrica_menu" action="profesores_action"/>
+
+<!-- add asignatura menu -->
+<menuitem id="asignaturas_menu" name="Asignaturas" parent="rubrica_menu" action="asignaturas_action"/>
+</odoo>

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import datetime
 import random
 from odoo import models, fields, api
 
@@ -23,6 +24,19 @@ class Alumno(models.Model):
 
     nombre = fields.Char(string='Nombre', required=True)
     edad = fields.Integer(string='Edad')
+    notasProgramacion = fields.Float(string='Nota Práctica')
+    notasDDI = fields.Float(string='Nota Práctica')
+    media = fields.Float(string='Media' compute='_compute_media')
+
+    @api.depends('notasProgramacion', 'notasDDI')
+    def _compute_media(self):
+        for record in self:
+            record.media = (record.notasProgramacion + record.notasDDI) / 2
+
+    
+
+
+    
 
 # add a profesores models
 class Profesor(models.Model):

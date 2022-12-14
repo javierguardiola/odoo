@@ -49,6 +49,9 @@
             <group>
                 <field name="nombre"/>
                 <field name="edad"/>
+                <field name="notasProgramacion"/>
+                <field name="notasDDI"/>
+                <field name="media"/> 
             </group>
         </form>
     </field>
@@ -92,6 +95,9 @@
         <tree string="Alumnos">
             <field name="nombre"/>
             <field name="edad"/>
+            <field name="notasProgramacion"/>
+            <field name="notasDDI"/>
+            <field name="media"/>
         </tree>
     </field>
 </record>

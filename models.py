@@ -26,8 +26,9 @@ class Alumno(models.Model):
     edad = fields.Integer(string='Edad')
     notasProgramacion = fields.Float(string='Nota Práctica')
     notasDDI = fields.Float(string='Nota Práctica')
-    media = fields.Float(string='Media' compute='_compute_media')
+    media = fields.Float(string='Media', compute='_compute_media')
 
+    # add float media field de las notas
     @api.depends('notasProgramacion', 'notasDDI')
     def _compute_media(self):
         for record in self:

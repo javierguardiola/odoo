@@ -39,6 +39,13 @@
     <field name="view_mode">tree,form</field>
 </record>
 
+<!-- add logo action -->
+<record id="logo_action" model="ir.actions.act_window">
+    <field name="name">Logo</field>
+    <field name="res_model">rubrica.logo</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
 
 <!-- add alumnos form view -->
 <record id="alumnos_form" model="ir.ui.view">
@@ -86,6 +93,20 @@
     </field>
 </record>
 
+<!-- add logo form view -->
+<record id="logo_form" model="ir.ui.view">
+    <field name="name">Logo.form</field>
+    <field name="model">rubrica.logo</field>
+    <field name="arch" type="xml">
+        <form string="Logo">
+            <group>
+                <field name="name"/>
+                <field name="logo"/>
+            </group>
+        </form>
+    </field>
+</record>
+
 
 <!-- add alumno tree view -->
 <record id="alumnos_tree" model="ir.ui.view">
@@ -127,6 +148,18 @@
     </field>
 </record>
 
+<!-- add logo tree view -->
+<record id="logo_tree" model="ir.ui.view">
+    <field name="name">Logo.tree</field>
+    <field name="model">rubrica.logo</field>
+    <field name="arch" type="xml">
+        <tree string="Logo">
+            <field name="name"/>
+            <field name="logo"/>
+        </tree>
+    </field>
+</record>
+
 
 
 
@@ -140,4 +173,7 @@
 
 <!-- add asignatura menu -->
 <menuitem id="asignaturas_menu" name="Asignaturas" parent="rubrica_menu" action="asignaturas_action"/>
+
+<!-- add logo menu -->
+<menuitem id="logo_menu" name="Logo" parent="rubrica_menu" action="logo_action"/>
 </odoo>
